@@ -18,7 +18,6 @@ void Sort(float a[], int n);
 void Print(float a[], int n,int bh[]);
 float b[M];
 int bh[M];
-
 int main()
 {
     int i=0,n,m,r,t=0;
@@ -126,7 +125,161 @@ void Sort(float a[],  int m)
     cout<<"************************"<<endl;
 }
 
-
+void Print(float a[], int m,int bh[])
+{
+    int i;
+    if((a[0]!=a[1])&&a[1]!=a[2])
+        
+    {
+        if(m>2){
+            cout<<setw(18)<<"编号"<<setw(15)<<"成绩"<<endl;
+            cout<<"冠军:   ";
+            
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    break;
+            }
+            cout<<setw(7)<<bh[i];
+            cout<<setw(14)<<a[0]<<endl;
+            cout<<"亚军：  ";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[1])
+                    break;
+            }
+            cout<<setw(7)<<bh[i];
+            cout<<setw(14)<<a[1]<<endl;
+            cout<<"季军：  ";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[2])
+                    break;
+            }
+            cout<<setw(7)<<bh[i];
+            cout<<setw(14)<<a[2]<<endl;
+        }
+        else{
+            
+            cout<<setw(18)<<"编号"<<setw(15)<<"成绩"<<endl;
+            cout<<"冠军：   ";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    break;
+            }
+            cout<<setw(7)<<bh[i];
+            cout<<setw(13)<<a[0]<<endl;
+            cout<<"亚军：   ";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[1])
+                    break;
+            }
+            cout<<setw(7)<<bh[i];
+            cout<<setw(13)<<a[1]<<endl;
+        }
+    }
+    
+    else if((a[0]==a[1])&&(a[1]!=a[2]))
+    {
+        cout<<"**两位选手并列第一"<<endl;
+        if(m>2)
+        {
+            cout<<"冠军   编号为:";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    cout<<bh[i]<<"  ";
+            }
+            cout<<"成绩为："<<a[1]<<endl;
+            cout<<"亚军   编号为:";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[2])
+                    break;
+            }
+            cout<<bh[i];
+            cout<<"成绩为："<<a[2]<<endl;
+            
+        }
+        else
+        {
+            cout<<"冠军   编号为:";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    break;
+            }
+            cout<<bh[i];cout<<"   ";
+            cout<<"成绩为："<<a[1]<<endl;
+        }
+    }
+    else if((a[0]!=a[1])&&(a[1]==a[2]))
+    {
+        if(m>2)
+        {
+            cout<<"**几位选手并列第二"<<endl;
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    break;
+            }
+            cout<<"冠军   编号为："<<bh[i];
+            cout<<"成绩为："<<a[0]<<endl;
+            
+            cout<<"亚军   编号为：";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[1])
+                    cout<<bh[i]<<"   ";
+            }
+            
+            cout<<"成绩为："<<a[2]<<endl;
+        }
+        else
+        {
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    cout<<"冠军   编号为："<<bh[i]<<"   ";}
+            cout<<"成绩为："<<a[0]<<endl;
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[1])
+                    cout<<"亚军   编号为："<<bh[i]<<"   ";
+            }
+            cout<<"成绩为："<<a[1]<<endl;
+        }
+    }
+    else if((a[0]==a[1])&&(a[1]==a[2]))
+    {
+        if(m>2)
+        {
+            cout<<"**几位选手并列第一"<<endl;
+            cout<<"冠军   编号为:";
+            
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    cout<<bh[i]<<"   ";
+            }
+            cout<<"成绩为："<<a[0]<<endl;
+            
+        }
+        else
+        {
+            cout<<"**两位选手并列第一"<<endl;
+            cout<<"冠军   编号为:";
+            for(i=0;i<m;i++)
+            {
+                if(b[i]==a[0])
+                    cout<<bh[i]<<"   ";
+            }
+            
+        }
+    }
+}
 
 
 
